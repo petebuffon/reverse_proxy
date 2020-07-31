@@ -20,7 +20,7 @@ services:
     environment:
       - PUID=4000
       - GUID=4000
-      -TZ=America/Los_Angeles
+      - TZ=America/Los_Angeles
     ports:
       - 1900:1900
     volumes:
