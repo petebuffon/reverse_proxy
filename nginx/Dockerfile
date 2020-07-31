@@ -1,7 +1,8 @@
 FROM nginx
 
-COPY ./conf.d /etc/nginx/conf.d \
-  && COPY ./keys /etc/nginx/keys
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./conf.d /etc/nginx/conf.d
+COPY ./keys /etc/nginx/keys
 
 RUN userdel nginx \
     && useradd -u 2000 nginx \
