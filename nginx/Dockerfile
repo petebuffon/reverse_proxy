@@ -6,8 +6,6 @@ COPY ./keys /etc/nginx/keys
 
 RUN userdel nginx \
     && useradd -u 2000 nginx \
-    && mkdir -p /var/run/nginx /var/tmp/nginx \
-    && chown -R nginx:nginx /usr/share/nginx /var/run/nginx /var/tmp/nginx /etc/nginx/conf.d /etc/nginx/keys \
-    && mkdir /cache && chown -R nginx:nginx /cache
+    && chown -R nginx:nginx /etc/nginx /var/cache/nginx
 
 USER nginx:nginx
