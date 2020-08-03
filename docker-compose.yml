@@ -28,8 +28,6 @@ services:
       #/pathtomedia:/data
     devices:
       - /dev/dri:/dev/dri
-    networks:
-      - default
     restart: unless-stopped
 
 volumes:
