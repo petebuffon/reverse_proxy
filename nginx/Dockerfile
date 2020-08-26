@@ -7,7 +7,7 @@ COPY ./keys /etc/nginx/keys
 RUN userdel nginx \
     && mkdir /tmp/nginx \
     && useradd -u 2000 nginx \
-    && chown -R nginx:nginx /etc/nginx /var/cache/nginx
+    && chown -R nginx:nginx /etc/nginx /var/cache/nginx /tmp/nginx
 
 EXPOSE 8080
 
