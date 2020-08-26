@@ -5,6 +5,7 @@ services:
       context: ./nginx
     container_name: reverse_proxy
     environment:
+      # change to your timezine
       - TZ=America/Los_Angeles
     ports:
       - 80:8080
@@ -18,16 +19,20 @@ services:
     image: linuxserver/jellyfin
     container_name: jellyfin
     environment:
+      # change to owner of media files
       - PUID=4000
       - GUID=4000
+      # change to your timezone
       - TZ=America/Los_Angeles
     ports:
+      # discovery port
       - 1900:1900
     volumes:
       - jellyfin_config:/config
       #/pathtomedia:/data
-    devices:
-      - /dev/dri:/dev/dri
+    # https://jellyfin.org/docs/general/administration/hardware-acceleration.html
+    # devices:
+      # - /dev/dri:/dev/dri
     restart: unless-stopped
 
 volumes:
